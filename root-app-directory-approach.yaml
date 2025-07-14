@@ -1,7 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  creationTimestamp: null
   finalizers:
   - resources-finalizer.argocd.argoproj.io
   labels:
@@ -20,7 +19,7 @@ spec:
   project: default
   source:
     path: directory-of-apps
-    repoURL: https://github.com/mabusaa/argocd-course-app-of-apps.git
+    repoURL: https://github.com/khanhtranhuy/argocd-course-app-of-apps.git
     targetRevision: main
     directory:
       recurse: true
