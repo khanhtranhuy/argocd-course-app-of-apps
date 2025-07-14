@@ -1,17 +1,30 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-metadata: 
-  name: app1
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  labels:
+    app.kubernetes.io/name: web-app-1
+  name: web-app-1
   namespace: argocd
-spec: 
-  destination: 
-    namespace: app1
-    server: "https://kubernetes.default.svc"
+spec:
+  destination:
+    namespace: web-app-1
+    server: https://kubernetes.default.svc
+  ignoreDifferences:
+  - group: argoproj.io
+    jsonPointers:
+    - /status
+    kind: Application
   project: default
-  source: 
-    path: guestbook
-    repoURL: "https://github.com/khanhtranhuy/argocd-example-apps.git"
-    targetRevision: master
+  source:
+    path: helm/webapp
+    repoURL: https://github.com/khanhtranhuy/argocd-course-webapp.git
+    targetRevision: main
   syncPolicy:
+    automated:
+      allowEmpty: true
+      selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+    - allowEmpty=true
+    - CreateNamespace=true
