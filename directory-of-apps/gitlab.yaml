@@ -6,6 +6,7 @@ metadata:
 spec:
   project: default
   source:
+    path: ./
     repoURL: https://github.com/khanhtranhuy/gitlab.git
     targetRevision: main
     helm:
