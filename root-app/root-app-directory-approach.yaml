@@ -4,8 +4,8 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
   labels:
-    app.kubernetes.io/name: root-app-directory-approach
-  name: root-app-directory-approach
+    app.kubernetes.io/name: root-app
+  name: root-app
   namespace: argocd
 spec:
   destination:
@@ -25,8 +25,10 @@ spec:
       recurse: true
   syncPolicy:
     automated:
-      allowEmpty: true
+      prune: true
       selfHeal: true
+      allowEmpty: true
     syncOptions:
-    - allowEmpty=true
-    - CreateNamespace=true
+      - allowEmpty=true
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
