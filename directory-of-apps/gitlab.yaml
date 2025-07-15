@@ -11,25 +11,25 @@ spec:
     helm:
       releaseName: gitlab
       parameters:
-      - name: global.hosts.domain
+      - name: "global.hosts.domain"
         value: khanhtranhuy.io.vn
-      - name: global.hosts.externalIP
+      - name: "global.hosts.externalIP"
         value: 10.31.200.5
-      - name: installCertmanager
+      - name: "installCertmanager"
         value: false
-      - name: global.ingress.configureCertmanager
+      - name: "global.ingress.configureCertmanager"
         value: false
-      - name: global.ingress.annotations."kubernetes\.io/tls-acme"
+      - name: "global.ingress.annotations.kubernetes\.io/tls-acme"
         value: true
-      - name: gitlab.webservice.ingress.tls.secretName
+      - name: "gitlab.webservice.ingress.tls.secretName"
         value: personal-gitlab-tls
-      - name: registry.ingress.tls.secretName
+      - name: "registry.ingress.tls.secretName"
         value: personal-registry-tls
-      - name: minio.ingress.tls.secretName
+      - name: "minio.ingress.tls.secretName"
         value: personal-minio-tls
-      - name: gitlab.kas.ingress.tls.secretName
+      - name: "gitlab.kas.ingress.tls.secretName"
         value: personal-kas-tls
-      - name: gitlab-runner.runners.privileged
+      - name: "gitlab-runner.runners.privileged"
         value: true
   destination:
     server: "https://kubernetes.default.svc"
