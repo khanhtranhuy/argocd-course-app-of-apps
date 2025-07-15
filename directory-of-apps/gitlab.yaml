@@ -7,11 +7,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/khanhtranhuy/gitlab.git
-    targetRevision: HEAD
+    targetRevision: main
     helm:
       releaseName: gitlab
       valueFiles:
-    - gitlab-values.yaml
+      - gitlab-values.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: gitlab
