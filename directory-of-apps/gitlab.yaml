@@ -11,7 +11,7 @@ spec:
     targetRevision: main
     helm:
       releaseName: gitlab
-      value: |
+      values: |
         global.hosts.domain: khanhtranhuy.io.vn
         global.hosts.externalIP: 10.31.200.5
         certmanager-issuer.email: khanhtranhuy9x@gmail.com
