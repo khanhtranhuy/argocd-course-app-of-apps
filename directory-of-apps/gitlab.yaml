@@ -11,8 +11,8 @@ spec:
     targetRevision: main
     helm:
       releaseName: gitlab
-      valueFiles:
-      - /gitlab-values.yaml
+      # valueFiles:
+      # - /gitlab-values.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: gitlab
