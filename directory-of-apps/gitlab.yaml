@@ -6,7 +6,6 @@ metadata:
 spec:
   project: default
   source:
-    chart: gitlab
     repoURL: https://github.com/khanhtranhuy/gitlab.git
     targetRevision: HEAD
     helm:
