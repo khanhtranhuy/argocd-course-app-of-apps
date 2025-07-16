@@ -9,6 +9,10 @@ spec:
     repoURL: https://charts.netbox.oss.netboxlabs.com/
     chart: netbox
     targetRevision: 6.0.52
+    helm:
+      valuesObject:
+        persistence:
+          enabled: false
   destination:
     server: https://kubernetes.default.svc
     namespace: netbox
@@ -16,3 +20,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
