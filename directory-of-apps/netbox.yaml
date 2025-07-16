@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://charts.netbox.oss.netboxlabs.com/
     chart: netbox
-    targetRevision: netbox-6.0.52
+    targetRevision: 6.0.52
   destination:
     server: https://kubernetes.default.svc
     namespace: netbox
